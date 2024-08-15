@@ -1,0 +1,33 @@
+# version: '3'
+
+# services:
+#   frontend:
+#     build:
+#       context: ./frontend
+#     command: npm run dev
+#     ports:
+#       - 8001:8001
+
+#   backend:
+#     build:
+#       context: ./backend
+#     command: python manage.py runserver 0.0.0.0:8000
+#     ports:
+#       - 8000:8000
+#     depends_on:
+#       - postgres
+#     environment:
+#       - NAME=empreus
+#       - USER=postgres
+#       - PASSWORD=psql
+#       - HOST=postgres
+#       - PORT=5432
+
+#   postgres:
+#     image: postgres:15-alpine
+#     environment:
+#       - POSTGRES_DB=empreus
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=psql
+#     volumes:
+#       - /Users/rupesh/volumes/postgres:/var/lib/postgresql/data

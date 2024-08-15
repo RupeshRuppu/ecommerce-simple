@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  creationTimestamp: '2024-03-25T09:10:49Z'
+  generation: 2
+  name: new-replica-set
+  namespace: default
+  resourceVersion: '1357'
+  uid: 94fae965-6b8d-4ca3-88ec-a261729e96f5
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      name: busybox-pod
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: busybox-pod
+    spec:
+      containers:
+        - command:
+            - sh
+            - -c
+            - echo Hello Kubernetes! && sleep 3600
+          image: busybox
+          imagePullPolicy: Always
+          name: busybox-container
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  fullyLabeledReplicas: 4
+  observedGeneration: 2
+  replicas: 4
